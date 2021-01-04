@@ -2,7 +2,19 @@
 
 <html>
 
-<body>
+<head>
+  <script src="https://momentjs.com/downloads/moment.js">
+  </script>
+  <script>
+    function popDate() {
+      var span = document.getElementById("dateLoc");
+      // var date = new Date();
+      span.innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a');
+    }
+  </script>
+</head>
+
+<body onload="setInterval(popDate, 1000)">
   <center>
     <img src="../assets/img/profile-img.jpg" style="
     border-radius: 50%; width: 300px; height: 300px" />
@@ -66,6 +78,10 @@
       <td>???</td>
     </tr>
   </table>
+  <hr />
+  <h1>Declaration</h1>
+  <p>Above is true (probably).</p>
+  <p style="text-align: right;">Place: Bangalore <br /> Date: <span id="dateLoc"> </span></p>
 </body>
 
 </html>

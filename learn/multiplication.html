@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <script>
+    function multiply() {
+      // alert("hello world!");
+      var table = document.getElementById("thisTable");
+      var tbNum = document.getElementById("tbNum").value;
+      var tbLen = document.getElementById("tbLen").value;
+      // alert(tbNum + "," + tbLen);
+      table.innerHTML = "";
+      for (var i = 0; i < tbLen; i++) {
+
+        var row = table.insertRow(i);
+
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+
+        cell1.innerHTML = i + 1;
+        cell2.innerHTML = "*";
+        cell3.innerHTML = tbNum;
+        cell4.innerHTML = "=";
+        cell5.innerHTML = (i + 1) * tbNum;
+
+        cell1.style.textAlign = "center";
+        cell2.style.textAlign = "center";
+        cell3.style.textAlign = "center";
+        cell4.style.textAlign = "center";
+        cell5.style.textAlign = "center";
+
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Multiplication Table</h1>
+  <p>Table number: <input type="number" placeholder="enter table number" id="tbNum" /></p>
+  <p>Length of the table: <input type="number" placeholder="enter length of table" id="tbLen" /></p>
+  <p><button onclick="multiply()">Generate Table</button></p>
+
+  <table border="1" width="50%" id="thisTable">
+
+    <!-- <tr>
+      <td style="text-align: center;">1</td>
+      <td style="text-align: center;">*</td>
+      <td style="text-align: center;">10</td>
+      <td style="text-align: center;">=</td>
+      <td style="text-align: center;">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;">1</td>
+      <td style="text-align: center;">*</td>
+      <td style="text-align: center;">10</td>
+      <td style="text-align: center;">=</td>
+      <td style="text-align: center;">10</td>
+    </tr> -->
+  </table>
+</body>
+
+</html>
