@@ -1,0 +1,136 @@
+<html>
+
+<head>
+  <script src="https://momentjs.com/downloads/moment.js">
+  </script>
+  <script>
+    var num1 = null;
+    var num2 = null;
+    var op = null;
+
+    function opParse(inputOp) {
+      op = inputOp;
+    }
+
+    function numParse(num) {
+      if (op = null) {
+        num1 = num;
+      } else {
+        num2 = num;
+      }
+    }
+
+    function eval() {
+      // if (num2 == null) then
+      // { return num1; } 
+      // else {
+      switch (op) {
+        case "+":
+          num1 = num1 + num2;
+          num2 = null;
+          op = null;
+          return num1;
+          break;
+        case "-":
+          num1 = num1 - num2;
+          num2 = null;
+          op = null;
+          return num1;
+          break;
+        case "x":
+          num1 = num1 * num2;
+          num2 = null;
+          op = null;
+          return num1;
+          break;
+        case "/":
+          num1 = num1 / num2;
+          num2 = null;
+          op = null;
+          return num1;
+          break;
+        default:
+          return num1;
+      }
+      // }
+    }
+
+
+
+  </script>
+</head>
+
+<body>
+  <h1>Calculator</h1>
+  <text id="display" style="border: 3px; border-style: solid; padding: 0.5%;" width="50%"> test</text>
+  <p></p>
+  <table id="calculator">
+    <tr>
+
+    </tr>
+    <tr>
+      <!-- operators -->
+      <td>
+        <button>+</button>
+      </td>
+      <td>
+        <button>-</button>
+      </td>
+      <td>
+        <button>x</button>
+      </td>
+      <td>
+        <button>/</button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button>9</button>
+      </td>
+      <td>
+        <button>8</button>
+      </td>
+      <td>
+        <button>7</button>
+      </td>
+      <td>
+        <button>=</button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button>6</button>
+      </td>
+      <td>
+        <button>5</button>
+      </td>
+      <td>
+        <button>4</button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button>3</button>
+      </td>
+      <td>
+        <button>2</button>
+      </td>
+      <td>
+        <button>1</button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button>0</button>
+      </td>
+      <td>
+        <button>.</button>
+      </td>
+      <td>
+        <button>C</button>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>
