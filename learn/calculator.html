@@ -8,18 +8,34 @@
     var num2 = null;
     var op = null;
 
+    //for some reason clear() is not triggering onclick
+    function clear() {
+      alert("in clear");
+      alert("num1 = " + num1 + ", num2 = " + num2 + ", op = " + op);
+      num1 = null;
+      num2 = null;
+      op = null;
+      document.getElementById("display").innerHTML = empty;
+      alert("num1 = " + num1 + ", num2 = " + num2 + ", op = " + op);
+    }
+
+
     function opParse(inputOp) {
       op = inputOp;
     }
 
     function numParse(num) {
-      if (op = null) {
+      if (op == null) {
         num1 = num;
       } else {
         num2 = num;
       }
+      alert("num1 = " + num1 + ", num2 = " + num2 + ", op = " + op);
+      document.getElementById("display").innerHTML = num;
     }
 
+    /** [eval] returns the value when the operation [op] is applied to the 
+     * numbers[num1] and [num2] */
     function eval() {
       // if (num2 == null) then
       // { return num1; } 
@@ -55,14 +71,22 @@
       // }
     }
 
+    function printer() {
+      if (num2 == null) {
+        document.getElementById("display").innerHTML = num1;
+      } else {
+        var returnValue = eval();
+        document.getElementById("display").innerHTML = returnValue;
+      }
+    }
 
 
   </script>
 </head>
 
-<body>
+<body onload="numParse(null)">
   <h1>Calculator</h1>
-  <text id="display" style="border: 3px; border-style: solid; padding: 0.5%;" width="50%"> test</text>
+  <text id="display" style="border: 3px; border-style: solid; padding: 0.5%;" width="50%"></text>
   <p></p>
   <table id="calculator">
     <tr>
@@ -71,63 +95,63 @@
     <tr>
       <!-- operators -->
       <td>
-        <button>+</button>
+        <button onclick="opParse('+')">+</button>
       </td>
       <td>
-        <button>-</button>
+        <button onclick="opParse('-')">-</button>
       </td>
       <td>
-        <button>x</button>
+        <button onclick="opParse('x')">x</button>
       </td>
       <td>
-        <button>/</button>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <button>9</button>
-      </td>
-      <td>
-        <button>8</button>
-      </td>
-      <td>
-        <button>7</button>
-      </td>
-      <td>
-        <button>=</button>
+        <button onclick="opParse('/')">/</button>
       </td>
     </tr>
     <tr>
       <td>
-        <button>6</button>
+        <button onclick="numParse(9)">9</button>
       </td>
       <td>
-        <button>5</button>
+        <button onclick="numParse(8)">8</button>
       </td>
       <td>
-        <button>4</button>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <button>3</button>
+        <button onclick="numParse(7)">7</button>
       </td>
       <td>
-        <button>2</button>
-      </td>
-      <td>
-        <button>1</button>
+        <button onclick="printer()">=</button>
       </td>
     </tr>
     <tr>
       <td>
-        <button>0</button>
+        <button onclick="numParse(6)">6</button>
+      </td>
+      <td>
+        <button onclick="numParse(5)">5</button>
+      </td>
+      <td>
+        <button onclick="numParse(4)">4</button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button onclick="numParse(3)">3</button>
+      </td>
+      <td>
+        <button onclick="numParse(2)">2</button>
+      </td>
+      <td>
+        <button onclick="numParse(1)">1</button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button onclick="numParse(0)">0</button>
       </td>
       <td>
         <button>.</button>
       </td>
       <td>
-        <button>C</button>
+        <button onclick="clear()">C</button>
       </td>
     </tr>
   </table>
