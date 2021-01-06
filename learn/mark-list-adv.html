@@ -18,7 +18,12 @@
   <script>
     function populateTable() {
       var xmlhttp = new XMLHttpRequest();
-      xmlhttp.open("GET", "data/students.json", true);
+      //crud: create read update delete
+      //post: for creating
+      //get: for reading
+      //put: for updating
+      //delete: for deleting
+      xmlhttp.open("GET", "data/students.json1", true);
       xmlhttp.send();
 
       xmlhttp.onreadystatechange = function () {
