@@ -8,15 +8,13 @@
     var num2 = null;
     var op = null;
 
-    //for some reason clear() is not triggering onclick
-    function clear() {
-      alert("in clear");
-      alert("num1 = " + num1 + ", num2 = " + num2 + ", op = " + op);
+    function clr() {
+      // alert("num1 = " + num1 + ", num2 = " + num2 + ", op = " + op);
       num1 = null;
       num2 = null;
       op = null;
-      document.getElementById("display").innerHTML = empty;
-      alert("num1 = " + num1 + ", num2 = " + num2 + ", op = " + op);
+      document.getElementById("display").innerHTML = " ";
+      // alert("num1 = " + num1 + ", num2 = " + num2 + ", op = " + op);
     }
 
 
@@ -30,7 +28,7 @@
       } else {
         num2 = num;
       }
-      alert("num1 = " + num1 + ", num2 = " + num2 + ", op = " + op);
+      // alert("num1 = " + num1 + ", num2 = " + num2 + ", op = " + op);
       document.getElementById("display").innerHTML = num;
     }
 
@@ -151,7 +149,7 @@
         <button>.</button>
       </td>
       <td>
-        <button onclick="clear()">C</button>
+        <button onclick="clr()">C</button>
       </td>
     </tr>
   </table>

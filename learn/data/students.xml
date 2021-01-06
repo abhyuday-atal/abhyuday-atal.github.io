@@ -1,0 +1,26 @@
+<students> 
+  <student>
+    <name>Nithya</name>
+    <tamil>89</tamil>
+    <english>81</english>
+    <maths>98</maths>
+    <science>100</science>
+    <social>93</social>
+  </student>
+  <student>
+    <name>Jana</name>
+    <tamil>90</tamil>
+    <english>78</english>
+    <maths>96</maths>
+    <science>92</science>
+    <social>92</social>
+  </student>
+  <student>
+    <name>Kavitha</name>
+    <tamil>85</tamil>
+    <english>85</english>
+    <maths>100</maths>
+    <science>99</science>
+    <social>75</social>
+  </student>
+</students>
