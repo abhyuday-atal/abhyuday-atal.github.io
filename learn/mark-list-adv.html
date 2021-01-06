@@ -35,13 +35,13 @@
         var table = document.getElementById("studentsTable");
         for (var i = 0; i < students.length; i++) {
           var student = students[i];
-          renderStudent(student, table, i);
+          var row = table.insertRow(i + 1);
+          renderStudent(student, row);
         }
       }
     }
 
-    function renderStudent(student, table, index) {
-      var row = table.insertRow(index + 1);
+    function renderStudent(student, row) {
       var col1 = row.insertCell(0);
       var col2 = row.insertCell(1);
       var col3 = row.insertCell(2);
