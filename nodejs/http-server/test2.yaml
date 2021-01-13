@@ -1,0 +1,20 @@
+students:
+  student:
+    - name: Nithya
+      tamil: 89
+      english: 81
+      maths: 98
+      science: 100
+      social: 93
+    - name: Jana
+      tamil: 90
+      english: 78
+      maths: 96
+      science: 92
+      social: 92
+    - name: Kavitha
+      tamil: 85
+      english: 85
+      maths: 100
+      science: 99
+      social: 75
