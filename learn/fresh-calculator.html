@@ -9,14 +9,11 @@
     var op = null;
 
     function clr() {
-      // alert("num1 = " + num1 + ", num2 = " + num2 + ", op = " + op);
       num1 = null;
       num2 = null;
       op = null;
-      document.getElementById("display").innerHTML = " ";
-      // alert("num1 = " + num1 + ", num2 = " + num2 + ", op = " + op);
+      document.getElementById("display").innerHTML = "0";
     }
-
 
     function opParse(inputOp) {
       op = inputOp;
@@ -24,61 +21,68 @@
 
     function numParse(num) {
       if (op == null) {
-        num1 = num1 * 10 + num
+
+
+        if (num1 == null) {
+          num1 = num;
+        } else {
+          num1 = parseInt("" + num1 + num);
+        }
+
+
+        document.getElementById("display").innerHTML = num1;
       } else {
-        num2 = (num2 * 10) + num
+
+
+        if (num2 == null) {
+          num2 = num;
+        } else {
+          num2 = parseInt("" + num2 + num);
+
+        }
+
+
+        document.getElementById("display").innerHTML = num2;
       }
-      // alert("num1 = " + num1 + ", num2 = " + num2 + ", op = " + op);
-      document.getElementById("display").innerHTML = num;
     }
 
     /** [eval] returns the value when the operation [op] is applied to the 
      * numbers[num1] and [num2] */
     function eval() {
-      // if (num2 == null) then
-      // { return num1; } 
-      // else {
       switch (op) {
         case "+":
           num1 = num1 + num2;
           num2 = null;
           op = null;
-          return num1;
           break;
         case "-":
           num1 = num1 - num2;
           num2 = null;
           op = null;
-          return num1;
           break;
         case "x":
           num1 = num1 * num2;
           num2 = null;
           op = null;
-          return num1;
           break;
         case "/":
           num1 = num1 / num2;
           num2 = null;
           op = null;
-          return num1;
           break;
         default:
           return num1;
       }
-      // }
     }
 
-    function printer() {
+    /* function printer() {
       if (num2 == null) {
         document.getElementById("display").innerHTML = num1;
       } else {
         var returnValue = eval();
         document.getElementById("display").innerHTML = returnValue;
       }
-    }
-
-
+    } */
   </script>
 </head>
 
